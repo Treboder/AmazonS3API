@@ -1,4 +1,4 @@
-package br.com.example.davidarchanjo.service;
+package com.example.service;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

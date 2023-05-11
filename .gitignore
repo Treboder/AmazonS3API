@@ -1,5 +1,5 @@
-HELP.md
-/target/
+/src/main/resources/credentials.json
+target
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -28,3 +28,5 @@ bin
 
 ### VS Code ###
 .vscode/
+
+

@@ -1,4 +1,9 @@
 # Spring Boot AWS S3 Application 
+
+Credits for this project go to [David Archanjo](https://github.com/davidarchanjo) since this project is almost identical to his [spring-boot-aws-s3](https://github.com/davidarchanjo/spring-boot-aws-s3) from which this project is a fork.
+
+The Swagger UI is running at: http://localhost:8080/swagger-ui/index.html
+
 ![banner](./assets/banner.jpg)
 
 ## 1. Introduction
@@ -10,19 +15,24 @@ Amazon S3 is one of the most popular services from [Amazon Web Services](https:/
 - [AWS Account](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
 - [AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
 - [S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)
-- Your favorite IDE or your loved CLI
 
+Store the keys in a json under resources
+````json
+{
+  "AccessKeyID": "your_access_key_here",
+  "SecretAccessKey": "your_secret_access_key_here"
+}
+````
 
 ## 3. Project Structure
 The structure of this sample project is organized by following the MVC (a.k.a. **M**odel **V**iew **C**ontroller) Pattern. You can find more details about this pattern [here](https://examples.javacodegeeks.com/spring-mvc-architecture-overview-example/).
 
 The following are the base folders (packages) in which the project is organized and the purpose of each:
-- [📁 application](./src/main/java/br/com/example/davidarchanjo/application): contains the main class, annotated with `@SpringBootApplication`, which is responsible for booting up the application
-- [📁 config](./src/main/java/br/com/example/davidarchanjo/config): contains configuration class, annotated with `@Configuration`, which is responsible for defining the S3 client bean that will be used to perform operations on the bucket
-- [📁 controller](./src/main/java/br/com/example/davidarchanjo/controller): contains class, annotated with `@Controller`, which is responsible for processing REST requests for access and manipulation of the bucket and its contents
-- [📁 enumeration](./src/main/java/br/com/example/davidarchanjo/enumeration): contains enum definition for mapping file media type based on known file extensions
-- [📁 service](./src/main/java/br/com/example/davidarchanjo/service): contains service class, annotated with `@Service`, where all the logic to operate on the bucket is effectively implemented
-
+- [📁 application](src/main/java/com/example/application): contains the main class, annotated with `@SpringBootApplication`, which is responsible for booting up the application
+- [📁 config](src/main/java/com/example/config): contains configuration class, annotated with `@Configuration`, which is responsible for defining the S3 client bean that will be used to perform operations on the bucket
+- [📁 controller](src/main/java/com/example/controller): contains class, annotated with `@Controller`, which is responsible for processing REST requests for access and manipulation of the bucket and its contents
+- [📁 enumeration](src/main/java/com/example/enumeration): contains enum definition for mapping file media type based on known file extensions
+- [📁 service](src/main/java/com/example/service): contains service class, annotated with `@Service`, where all the logic to operate on the bucket is effectively implemented
 
 ## 4. Libraries and Dependencies
 - [Spring Web](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html)
@@ -59,6 +69,13 @@ According to the libraries and dependencies declared above, our [pom.xml](./pom.
     <version>1.18.20</version>
     <scope>provided</scope>
   </dependency>
+
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.10</version>
+    </dependency>
+    
 </dependencies>
 ```
 

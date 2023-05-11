@@ -1,4 +1,4 @@
-package br.com.example.davidarchanjo.enumeration;
+package com.example.enumeration;
 
 import java.util.Arrays;
 

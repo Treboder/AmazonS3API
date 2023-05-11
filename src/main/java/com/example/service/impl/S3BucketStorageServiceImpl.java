@@ -1,4 +1,4 @@
-package br.com.example.davidarchanjo.service.impl;
+package com.example.service.impl;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,15 +13,15 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
+import com.example.service.S3BucketStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.example.davidarchanjo.service.S3BucketStorageService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class S3BucketStorageServiceImpl implements S3BucketStorageService {    
+public class S3BucketStorageServiceImpl implements S3BucketStorageService {
     
     @Autowired
     private AmazonS3 s3Client;
